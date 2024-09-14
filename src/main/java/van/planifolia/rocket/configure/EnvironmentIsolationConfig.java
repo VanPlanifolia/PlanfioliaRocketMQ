@@ -14,7 +14,7 @@ public class EnvironmentIsolationConfig implements BeanPostProcessor {
 
 
     /**
-     * 在装载Bean之前实现参数修改
+     * 在装载Bean之前实现参数修改，用于实现开发环境与生产环境的Topic互相隔离
      */
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {

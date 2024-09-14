@@ -118,6 +118,10 @@ public abstract class EnhanceMessageHandler<T extends BaseMessage> {
         }
     }
 
+    /**
+     * 消息重发业务
+     * @param message 被重发的消息体
+     */
     protected void handleRetry(T message) {
         // 获取子类RocketMQMessageListener注解拿到topic和tag
         RocketMQMessageListener annotation = this.getClass().getAnnotation(RocketMQMessageListener.class);

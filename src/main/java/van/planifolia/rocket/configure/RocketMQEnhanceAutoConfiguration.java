@@ -28,7 +28,7 @@ public class RocketMQEnhanceAutoConfiguration {
     }
 
     /**
-     * 解决RocketMQ Jackson不支持Java时间类型配置
+     * 解决RocketMQ Jackson不支持Java时间类型配置，改造后的RocketMQ消息转换器
      */
     @Bean
     @Primary
@@ -48,7 +48,7 @@ public class RocketMQEnhanceAutoConfiguration {
 
 
     /**
-     * 环境隔离配置
+     * 环境隔离配置，初始化配置类
      */
     @Bean
     @ConditionalOnProperty(name="rocketmq.enhance.enabledIsolation", havingValue="true")
