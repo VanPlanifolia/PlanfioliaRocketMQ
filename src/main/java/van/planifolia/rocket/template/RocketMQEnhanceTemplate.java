@@ -1,6 +1,7 @@
 package van.planifolia.rocket.template;
 
 import com.alibaba.fastjson.JSONObject;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -18,21 +19,16 @@ import javax.annotation.Resource;
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RocketMQEnhanceTemplate {
+    /**
+     * -- GETTER --
+     *  获取原生RocketMQTemplate
+     */
+    @Getter
     private final RocketMQTemplate template;
 
     @Resource
     private RocketEnhanceProperties rocketEnhanceProperties;
 
-
-
-    /**
-     * 获取原生RocketMQTemplate
-     *
-     * @return rocketMqTemplate
-     */
-    public RocketMQTemplate getTemplate() {
-        return template;
-    }
 
     /**
      * 根据系统上下文自动构建隔离后的topic
